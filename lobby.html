@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat room</title>
+    <link rel="stylesheet" href="lobby.css">
+  </head>
+  <body>
+
+    <main id="lobby-container">
+        <div id = "form-container">
+            <div id="form-header-wrapper">
+                <p> 👋 Create or join a Room</p>
+            </div>
+
+            <div id = "form-content-wrapper">
+                <form id = "join-form">
+                    <input type="text" name="invie_link" required  autocomplete="off"/>
+                    <input type="submit" value="join Room"/>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+  </body>
+  <script>
+
+      let form = document.getElementById('join-form');
+
+      form.addEventListener('submit',(e) => {
+            e.preventDefault();
+
+            let inviteCode = e.target.invie_link.value;
+
+            window.location = `index.html?room=${inviteCode}`;
+      })
+
+  </script>
+ 
+</html>
